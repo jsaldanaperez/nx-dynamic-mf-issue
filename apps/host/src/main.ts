@@ -1,13 +1,11 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { setRemoteUrlResolver } from '@nrwl/angular/mf';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+setRemoteUrlResolver((name) => {
+  switch (name) {
+    case 'mfe1': return 'http://localhost:4201';
+    default: return 'http://localhost:4202'
 
-if (environment.production) {
-  enableProdMode();
-}
+  }
+})
 
-platformBrowserDynamic()
-  .bootstrapModule(AppModule)
-  .catch((err) => console.error(err));
+import('./bootstrap').catch((err) => console.error(err))

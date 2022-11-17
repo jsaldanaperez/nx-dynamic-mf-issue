@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "host": "apps/host",
+    "mfe1": "apps/mfe1",
+    "mfe2": "apps/mfe2",
+    "shared-auth": "libs/shared/auth"
+  }
+}

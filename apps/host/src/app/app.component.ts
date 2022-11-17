@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '@dmf/shared/auth';
 
 @Component({
   selector: 'dmf-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'host';
+
+  constructor(userService: UserService) {
+    userService.doStuff();
+  }
 }
